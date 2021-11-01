@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import FormInput from "./components/FormInput";
 
-function App() {
+const App = () => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -72,7 +72,8 @@ function App() {
 
   return (
     <div className="app">
-      <form onSubmit={handleSubmit} autoComplete="false">
+      <form onSubmit={handleSubmit}>
+        <h1>Register</h1>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -85,6 +86,6 @@ function App() {
       </form>
     </div>
   );
-}
+};
 
 export default App;
